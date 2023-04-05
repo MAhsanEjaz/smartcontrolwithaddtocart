@@ -42,6 +42,13 @@ dependencies:
   shared_preferences: ^2.0.18
   file_picker: ^4.3.2
   open_file: ^3.1.0
+  camera: ^0.10.3+2
+  tflite_flutter: ^0.9.1
+  image_picker: ^0.8.7+1
+  mnc_identifier_face: ^1.0.1
+  google_ml_kit: ^0.13.0
+  animated_custom_dropdown: ^1.5.0
+  animated_size_and_fade: ^3.0.1
 
 #  pdf: ^3.9.0
 
@@ -77,8 +84,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+
   assets:
-    - images/
+    - assets/model.tflite
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

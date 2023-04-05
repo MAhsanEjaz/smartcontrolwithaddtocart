@@ -1,12 +1,16 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_control/provider/cart_provider.dart';
+import 'package:smart_control/provider/customers_provider.dart';
 import 'package:smart_control/provider/get_cart_provider.dart';
 import 'package:smart_control/provider/login_provider.dart';
 import 'package:smart_control/provider/product_provider.dart';
 import 'package:smart_control/provider/registration_provider.dart';
 import 'package:smart_control/provider/student_provider.dart';
+import 'package:smart_control/screens/face_detection_screen.dart';
+import 'package:smart_control/screens/practice_dropdown.dart';
 import 'package:smart_control/screens/product_screen.dart';
 
 void main() async {
@@ -39,11 +43,17 @@ class _MyAppState extends State<MyApp> {
           ChangeNotifierProvider(create: (context) => RegistrationProvider()),
           ChangeNotifierProvider(create: (context) => ProductProvider()),
           ChangeNotifierProvider(create: (context) => GetOrderProvider()),
+          ChangeNotifierProvider(create: (context) => CustomerProvider()),
         ],
         child: MaterialApp(
+          theme: ThemeData(
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
           // home: EditScreen(),
           // home: RegistartionScreen(),
-          home: ProductScreen(),
+          // home: ProductScreen(),
+          home: AnimatedDropDown(),
+          // home: AnimatedDropDown(),
           // home: LoginScreen()
           // home: MyFileScreen(),
           // home: CaptilizationScreen(),
